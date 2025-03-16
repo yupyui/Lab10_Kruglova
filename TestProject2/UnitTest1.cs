@@ -15,14 +15,14 @@ namespace Lab.Tests
             {
                 var car = new Car();
                 car.Init();
-                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreNotEqual("Unknown", car.Brand); // Проверяем, что Brand изменился после Init
+                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreNotEqual("Unknown", car.Brand); // РџСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ Brand РёР·РјРµРЅРёР»СЃСЏ РїРѕСЃР»Рµ Init
             }
             [TestMethod]
             public void Car_Init_SetsYearCorrectly()
             {
                 var car = new Car();
                 car.Init();
-                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreNotEqual(2000, car.Year); // Проверяем, что Year изменился после Init
+                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreNotEqual(2000, car.Year); // РџСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ Year РёР·РјРµРЅРёР»СЃСЏ РїРѕСЃР»Рµ Init
             }
 
             [TestMethod]
@@ -30,7 +30,7 @@ namespace Lab.Tests
             {
                 var car = new Car();
                 car.Init();
-                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreNotEqual("Black", car.Color); // Проверяем, что Color изменился после Init
+                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreNotEqual("Black", car.Color); // РџСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ Color РёР·РјРµРЅРёР»СЃСЏ РїРѕСЃР»Рµ Init
             }
 
             [TestMethod]
@@ -38,7 +38,7 @@ namespace Lab.Tests
             {
                 var car = new Car();
                 car.Init();
-                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreNotEqual(0, car.Price); // Проверяем, что Price изменился после Init
+                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreNotEqual(0, car.Price); // РџСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ Price РёР·РјРµРЅРёР»СЃСЏ РїРѕСЃР»Рµ Init
             }
 
             [TestMethod]
@@ -46,41 +46,41 @@ namespace Lab.Tests
             {
                 var car = new Car();
                 car.Init();
-                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreNotEqual(0, car.GroundClearance); // Проверяем, что GroundClearance изменился после Init
+                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreNotEqual(0, car.GroundClearance); // РџСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ GroundClearance РёР·РјРµРЅРёР»СЃСЏ РїРѕСЃР»Рµ Init
             }
             [TestMethod]
             public void Truck_Init_SetsLoadCapacityCorrectly()
             {
                 var truck = new Truck();
                 truck.Init();
-                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(truck.LoadCapacity > 0); // Проверяем, что LoadCapacity больше 0
+                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(truck.LoadCapacity > 0); // РџСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ LoadCapacity Р±РѕР»СЊС€Рµ 0
             }
             [TestMethod]
             public void IInit_IsImplementedByCar()
             {
                 var car = new Car();
-                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(car is IInit); // Проверяем, что Car реализует IInit
+                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(car is IInit); // РџСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ Car СЂРµР°Р»РёР·СѓРµС‚ IInit
             }
 
             [TestMethod]
             public void IInit_IsImplementedByPassengerCar()
             {
                 var passengerCar = new PassengerCar();
-                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(passengerCar is IInit); // Проверяем, что PassengerCar реализует IInit
+                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(passengerCar is IInit); // РџСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ PassengerCar СЂРµР°Р»РёР·СѓРµС‚ IInit
             }
 
             [TestMethod]
             public void IInit_IsImplementedBySUV()
             {
                 var suv = new SUV();
-                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(suv is IInit); // Проверяем, что SUV реализует IInit
+                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(suv is IInit); // РџСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ SUV СЂРµР°Р»РёР·СѓРµС‚ IInit
             }
 
             [TestMethod]
             public void IInit_IsImplementedByTruck()
             {
                 var truck = new Truck();
-                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(truck is IInit); // Проверяем, что Truck реализует IInit
+                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(truck is IInit); // РџСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ Truck СЂРµР°Р»РёР·СѓРµС‚ IInit
             }
         }
 
@@ -297,7 +297,149 @@ namespace Lab.Tests
     [TestClass]
     public class CarTests
     {
+        [TestMethod]
+        public void Car_Constructor_Default_BrandIsUnknown()
+        {
+            var car = new Car();
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual("Unknown", car.Brand);
+        }
 
+        [TestMethod]
+        public void Car_Constructor_Default_YearIs2000()
+        {
+            var car = new Car();
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(2000, car.Year);
+        }
+
+        [TestMethod]
+        public void Car_Constructor_Default_ColorIsBlack()
+        {
+            var car = new Car();
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual("Black", car.Color);
+        }
+
+        [TestMethod]
+        public void Car_Constructor_Default_PriceIs0()
+        {
+            var car = new Car();
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(0, car.Price);
+        }
+
+        [TestMethod]
+        public void Car_Constructor_Default_GroundClearanceIs0()
+        {
+            var car = new Car();
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(0, car.GroundClearance);
+        }
+
+        [TestMethod]
+        public void Car_Constructor_WithParameters_BrandIsCorrect()
+        {
+            var car = new Car("Toyota", 2015, "Blue", 4500000, 20);
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual("Toyota", car.Brand);
+        }
+
+        [TestMethod]
+        public void Car_Constructor_WithParameters_YearIsCorrect()
+        {
+            var car = new Car("Toyota", 2015, "Blue", 4500000, 20);
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(2015, car.Year);
+        }
+
+        [TestMethod]
+        public void Car_Equals_ReturnsTrue_ForSameProperties()
+        {
+            var car1 = new Car("Toyota", 2015, "Blue", 4500000, 20);
+            var car2 = new Car("Toyota", 2015, "Blue", 4500000, 20);
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(car1.Equals(car2));
+        }
+
+        [TestMethod]
+        public void Car_Equals_ReturnsFalse_ForDifferentProperties()
+        {
+            var car1 = new Car("Toyota", 2015, "Blue", 4500000, 20);
+            var car2 = new Car("Honda", 2017, "Red", 5000000, 18);
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsFalse(car1.Equals(car2));
+        }
+
+        [TestMethod]
+        public void Car_Equals_ReturnsFalse_WhenComparingWithNull()
+        {
+            var car = new Car("Toyota", 2015, "Blue", 4500000, 20);
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsFalse(car.Equals(null));
+        }
+
+        [TestMethod]
+        public void Car_Equals_ReturnsFalse_WhenComparingWithDifferentType()
+        {
+            var car = new Car("Toyota", 2015, "Blue", 4500000, 20);
+            var otherObject = new object();
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsFalse(car.Equals(otherObject));
+        }
+
+        [TestMethod]
+        public void Car_CompareTo_ReturnsNegative_WhenPriceIsLess()
+        {
+            var car1 = new Car("Toyota", 2015, "Blue", 4500000, 20);
+            var car2 = new Car("Honda", 2017, "Red", 5000000, 18);
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(car1.CompareTo(car2) < 0);
+        }
+
+        [TestMethod]
+        public void Car_CompareTo_ReturnsZero_WhenPricesAreEqual()
+        {
+            var car1 = new Car("Toyota", 2015, "Blue", 4500000, 20);
+            var car2 = new Car("Honda", 2017, "Red", 4500000, 18);
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(0, car1.CompareTo(car2));
+        }
+
+        [TestMethod]
+        public void Car_Clone_ReturnsNewObjectWithSameBrand()
+        {
+            var car = new Car("Toyota", 2015, "Blue", 4500000, 20);
+            var clonedCar = (Car)car.Clone();
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(car.Brand, clonedCar.Brand);
+        }
+
+        [TestMethod]
+        public void Car_Clone_ReturnsNewObjectWithSameYear()
+        {
+            var car = new Car("Toyota", 2015, "Blue", 4500000, 20);
+            var clonedCar = (Car)car.Clone();
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(car.Year, clonedCar.Year);
+        }
+
+        [TestMethod]
+        public void Car_Clone_ReturnsNewObjectWithSameGroundClearance()
+        {
+            var car = new Car("Toyota", 2015, "Blue", 4500000, 20);
+            var clonedCar = (Car)car.Clone();
+           Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(car.GroundClearance, clonedCar.GroundClearance);
+        }
+
+        [TestMethod]
+        public void Car_ShallowCopy_ReturnsNewObjectWithSamePrice()
+        {
+            var car = new Car("Toyota", 2015, "Blue", 4500000, 20);
+            var shallowCopyCar = (Car)car.ShallowCopy();
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(car.Price, shallowCopyCar.Price);
+        }
+
+        [TestMethod]
+        public void Car_ShallowCopy_ReturnsNewObjectWithSameGroundClearance()
+        {
+            var car = new Car("Toyota", 2015, "Blue", 4500000, 20);
+            var shallowCopyCar = (Car)car.ShallowCopy();
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(car.GroundClearance, shallowCopyCar.GroundClearance);
+        }
+
+        [TestMethod]
+        public void Car_ToString_ReturnsCorrectString()
+        {
+            var car = new Car("Toyota", 2015, "Blue", 4500000, 20);
+            string expected = "Р‘СЂРµРЅРґ: Toyota, Р“РѕРґ РІС‹РїСѓСЃРєР°: 2015, Р¦РІРµС‚: Blue, РЎС‚РѕРёРјРѕСЃС‚СЊ: 4500000, Р”РѕСЂРѕР¶РЅС‹Р№ РїСЂРѕСЃРІРµС‚: 20";
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(expected, car.ToString());
+        }
         [TestMethod]
         public void Car_Constructor_WithParameters_ColorIsCorrect()
         {
@@ -326,6 +468,50 @@ namespace Lab.Tests
     public class PassengerCarTests
     {
         [TestMethod]
+        public void PassengerCar_Constructor_Default_DoorsCountIs4()
+        {
+            var passengerCar = new PassengerCar();
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(4, passengerCar.DoorsCount);
+        }
+
+        [TestMethod]
+        public void PassengerCar_Constructor_Default_MaxSpeedIs200()
+        {
+            var passengerCar = new PassengerCar();
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(200, passengerCar.MaxSpeed);
+        }
+
+        [TestMethod]
+        public void PassengerCar_Constructor_WithParameters_DoorsCountIsCorrect()
+        {
+            var passengerCar = new PassengerCar("Honda", 2017, "Red", 5000000, 18, 5, 220);
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(5, passengerCar.DoorsCount);
+        }
+
+        [TestMethod]
+        public void PassengerCar_Equals_ReturnsTrue_ForSameProperties()
+        {
+            var car1 = new PassengerCar("Honda", 2017, "Red", 5000000, 18, 5, 220);
+            var car2 = new PassengerCar("Honda", 2017, "Red", 5000000, 18, 5, 220);
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(car1.Equals(car2));
+        }
+
+        [TestMethod]
+        public void PassengerCar_ShallowCopy_ReturnsNewObjectWithSameMaxSpeed()
+        {
+            var passengerCar = new PassengerCar("Honda", 2017, "Red", 5000000, 18, 5, 220);
+            var shallowCopyCar = (PassengerCar)passengerCar.ShallowCopy();
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(passengerCar.MaxSpeed, shallowCopyCar.MaxSpeed);
+        }
+
+        [TestMethod]
+        public void PassengerCar_ToString_ReturnsCorrectString()
+        {
+            var passengerCar = new PassengerCar("Honda", 2017, "Red", 5000000, 18, 5, 220);
+            string expected = "Р‘СЂРµРЅРґ: Honda, Р“РѕРґ РІС‹РїСѓСЃРєР°: 2017, Р¦РІРµС‚: Red, РЎС‚РѕРёРјРѕСЃС‚СЊ: 5000000, Р”РѕСЂРѕР¶РЅС‹Р№ РїСЂРѕСЃРІРµС‚: 18, РљРѕР»РёС‡РµСЃС‚РІРѕ РґРІРµСЂРµР№: 5, РњР°РєСЃРёРјР°Р»СЊРЅР°СЏ СЃРєРѕСЂРѕСЃС‚СЊ: 220 РєРј/С‡";
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(expected, passengerCar.ToString());
+        }
+        [TestMethod]
         public void PassengerCar_Constructor_WithParameters_MaxSpeedIsCorrect()
         {
             var passengerCar = new PassengerCar("Honda", 2017, "Red", 5000000, 18, 5, 220);
@@ -336,6 +522,50 @@ namespace Lab.Tests
     [TestClass]
     public class SUVTests
     {
+        [TestMethod]
+        public void SUV_Constructor_Default_FourWheelDriveIsFalse()
+        {
+            var suv = new SUV();
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsFalse(suv.FourWheelDrive);
+        }
+
+        [TestMethod]
+        public void SUV_Constructor_Default_TerrainTypeIsUnknown()
+        {
+            var suv = new SUV();
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual("Unknown", suv.TerrainType);
+        }
+
+        [TestMethod]
+        public void SUV_Constructor_WithParameters_FourWheelDriveIsCorrect()
+        {
+            var suv = new SUV("BMW", 2020, "White", 8000000, 15, true, "Mud");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(suv.FourWheelDrive);
+        }
+
+        [TestMethod]
+        public void SUV_Equals_ReturnsTrue_ForSameProperties()
+        {
+            var suv1 = new SUV("BMW", 2020, "White", 8000000, 15, true, "Mud");
+            var suv2 = new SUV("BMW", 2020, "White", 8000000, 15, true, "Mud");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(suv1.Equals(suv2));
+        }
+
+        [TestMethod]
+        public void SUV_ShallowCopy_ReturnsNewObjectWithSameTerrainType()
+        {
+            var suv = new SUV("BMW", 2020, "White", 8000000, 15, true, "Mud");
+            var shallowCopySUV = (SUV)suv.ShallowCopy();
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(suv.TerrainType, shallowCopySUV.TerrainType);
+        }
+
+        [TestMethod]
+        public void SUV_ToString_ReturnsCorrectString()
+        {
+            var suv = new SUV("BMW", 2020, "White", 8000000, 15, true, "Mud");
+            string expected = "Р‘СЂРµРЅРґ: BMW, Р“РѕРґ РІС‹РїСѓСЃРєР°: 2020, Р¦РІРµС‚: White, РЎС‚РѕРёРјРѕСЃС‚СЊ: 8000000, Р”РѕСЂРѕР¶РЅС‹Р№ РїСЂРѕСЃРІРµС‚: 15, РџРѕР»РЅС‹Р№ РїСЂРёРІРѕРґ: True, РўРёРї РјРµСЃС‚РЅРѕСЃС‚Рё: Mud";
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(expected, suv.ToString());
+        }
         [TestMethod]
         public void SUV_Constructor_WithParameters_TerrainTypeIsCorrect()
         {
@@ -349,7 +579,7 @@ namespace Lab.Tests
             var suv = new SUV();
             var rand = new Random();
             suv.RandomInit(rand);
-            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(suv.FourWheelDrive || !suv.FourWheelDrive); // Проверка, что значение установлено
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(suv.FourWheelDrive || !suv.FourWheelDrive); // РџСЂРѕРІРµСЂРєР°, С‡С‚Рѕ Р·РЅР°С‡РµРЅРёРµ СѓСЃС‚Р°РЅРѕРІР»РµРЅРѕ
         }
 
         [TestMethod]
@@ -366,6 +596,43 @@ namespace Lab.Tests
     public class TruckTests
     {
         [TestMethod]
+        public void Truck_Constructor_Default_LoadCapacityIs0()
+        {
+            var truck = new Truck();
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(0, truck.LoadCapacity);
+        }
+
+        [TestMethod]
+        public void Truck_Constructor_WithParameters_LoadCapacityIsCorrect()
+        {
+            var truck = new Truck("Volvo", 2019, "Red", 7000000, 30, 3000);
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(3000, truck.LoadCapacity);
+        }
+
+        [TestMethod]
+        public void Truck_Equals_ReturnsTrue_ForSameProperties()
+        {
+            var truck1 = new Truck("Volvo", 2019, "Red", 7000000, 30, 3000);
+            var truck2 = new Truck("Volvo", 2019, "Red", 7000000, 30, 3000);
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(truck1.Equals(truck2));
+        }
+
+        [TestMethod]
+        public void Truck_ShallowCopy_ReturnsNewObjectWithSameLoadCapacity()
+        {
+            var truck = new Truck("Volvo", 2019, "Red", 7000000, 30, 3000);
+            var shallowCopyTruck = (Truck)truck.ShallowCopy();
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(truck.LoadCapacity, shallowCopyTruck.LoadCapacity);
+        }
+
+        [TestMethod]
+        public void Truck_ToString_ReturnsCorrectString()
+        {
+            var truck = new Truck("Volvo", 2019, "Red", 7000000, 30, 3000);
+            string expected = "Р‘СЂРµРЅРґ: Volvo, Р“РѕРґ РІС‹РїСѓСЃРєР°: 2019, Р¦РІРµС‚: Red, РЎС‚РѕРёРјРѕСЃС‚СЊ: 7000000, Р”РѕСЂРѕР¶РЅС‹Р№ РїСЂРѕСЃРІРµС‚: 30, Р“СЂСѓР·РѕРїРѕРґСЉС‘РјРЅРѕСЃС‚СЊ: 3000 РєРі";
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(expected, truck.ToString());
+        }
+        [TestMethod]
         public void Car_RandomInit_SetsRandomBrand()
         {
             var car = new Car();
@@ -381,12 +648,6 @@ namespace Lab.Tests
             var rand = new Random();
             car.RandomInit(rand);
             Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(car.Year >= 2000 && car.Year <= 2023);
-        }
-        [TestMethod]
-        public void Truck_Constructor_WithParameters_LoadCapacityIsCorrect()
-        {
-            var truck = new Truck("Volvo", 2019, "Red", 7000000, 30, 3000);
-            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(3000, truck.LoadCapacity);
         }
     }
 }
